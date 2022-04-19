@@ -1,8 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import {  BoardApiProvider} from 'context/BoardApi.context';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <BoardApiProvider>
+      <Component {...pageProps} />
+    </BoardApiProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
